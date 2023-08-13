@@ -1,2 +1,2 @@
-# Nomobank-test-automation
-Test automation framework for Nomobank website, using Playwright
+# Nomobank-test-automation demo
+Test automation framework demo for Nomobank website, using Playwright
