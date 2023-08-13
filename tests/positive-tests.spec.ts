@@ -5,16 +5,17 @@ test('Task1: website is up and running', async ({ page }) => {
 
     // Expect a title "to contain" a substring.
     await expect(page).toHaveTitle("Nomo Bank | UK Sharia-compliant digital banking");
+    // click accept cookies button
+    await page.locator('[data-test="cookies-accept"]').click();
 });
 
 test('Task2: validate finance amount and monthly costs', async ({ page }) => {
     await page.goto('https://www.nomobank.com/rental-property-finance/');
 
-    const iframe = page.frameLocator('iframe');
-
-    // Click accept cookies button if found
-    // await iframe.getByTestId('cookies-accept').click();
-
+    // click accept cookies button
+    await page.locator('[data-test="cookies-accept"]').click();
+    // switch focus to iframe
+    const iframe = page.frameLocator('iframe.mc-embedded_Iframe__27PR_');
     // fill the fields
     await iframe.locator("#mui-1").fill('1000000');
     await iframe.locator("#mui-2").fill('1000');
